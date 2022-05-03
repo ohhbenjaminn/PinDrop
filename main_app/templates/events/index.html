@@ -1,21 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- <h1>Cat List</h1>
+ <h1>Event List</h1>
 
-{% for cat in cats %}
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ cat.name }}</span>
-      <p>Breed: {{ cat.breed }}</p>
-      <p>Description: {{ cat.description }}</p>
-      {% if cat.age > 0 %}
-        <p>Age: {{ cat.age }}</p>
-      {% else %}
-        <p>Age: Kitten</p>
-      {% endif %}
-    </div>
-  </div>
-{% endfor %} -->
+ <div class="card">
+    <!-- add this single line below -->
+    <a href="{% url 'detail' event.id %}">
+      <div class="card-content">
+        <span class="card-title">{{ event.name }}</span>
+        <p>location: {{ event.location }}</p>
+        <p>event_time: {{ event.event_time }}</p>
+        <p>time_created: {{ event.time_created }}</p>
+        <p>details: {{ details.description }}</p>
+        <p>event_time: {{ event.description }}</p>
+        <p>user: {{ event.user }}</p>
+{% endfor %} 
 
 {% endblock %}
