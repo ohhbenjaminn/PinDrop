@@ -1,8 +1,10 @@
 from django.db import models
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
+from django.urls import reverse
+from datetime import date
 # Create your models here
-class User(models.Model):
-    name = models.CharField(max_length=100)
+# class User(models.Model):
+#     name = models.CharField(max_length=100)
 
 class Event(models.Model):
     name = models.CharField(max_length=101)
