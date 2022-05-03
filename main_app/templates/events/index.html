@@ -4,7 +4,7 @@
  <h1>Event List</h1>
 
  <div class="card">
-    <!-- add this single line below -->
+{% for event in events %}
     <a href="{% url 'detail' event.id %}">
       <div class="card-content">
         <span class="card-title">{{ event.name }}</span>
@@ -14,6 +14,9 @@
         <p>details: {{ details.description }}</p>
         <p>event_time: {{ event.description }}</p>
         <p>user: {{ event.user }}</p>
+    </div>
+<div>
+</a>
 {% endfor %} 
 
 {% endblock %}
