@@ -25,11 +25,20 @@ class EventCreate(CreateView):
 #   '__all__'
     success_url = '/events/'
 
+    def form_valid(self, form):
+        event = form.save(commit=False)
+        event.user = self.request.user # on every request we have the user property which is the logged in user
+        return super(EventCreate, self).form_valid(form)
+
 class EventUpdate(UpdateView):
   model = Event
   # Let's disallow the renaming of a cat by excluding the name field!
   fields = ['name', 'location', 'event_time', 'time_created', 'details']
   #   '__all__'
+  def form_valid(self, form):
+        event = form.save(commit=False)
+        event.user = self.request.user # on every request we have the user property which is the logged in user
+        return super(EventCreate, self).form_valid(form)
 
 class EventDelete(DeleteView):
   model = Event
