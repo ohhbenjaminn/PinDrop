@@ -51,6 +51,29 @@ function initMap(marks) {
         position: {lat: parseFloat(markerIngredients.lat), lng: parseFloat(markerIngredients.lng)},
         map: map,
       });
+
+      // reference for markerIngredients vv
+      // id: '15
+      // user: '2'
+      // name: 'Joe Testdata'
+      // location: 'A Description'
+      // event_time: 'datetime.datetime(2020, 5, 3, 0, 0....
+      // time create: 'datetime.datetime(2020, 5, 3, 0, 0....
+      // lat: "-17.077762075345877"
+      // lng: "128.7755974946022"
+      marker.addListener('mouseup', (event) => {
+        //add onclick behavior to marker 
+        if (event.domEvent.which === 1) {
+          // Update endpoint: events/<int:event_id>/
+          window.location.href = `/events/${markerIngredients.id}/`
+        }
+        if( mapEl.classList.contains('logged-in')) {
+          if (event.domEvent.which === 3) {
+            // Delete endpoint: 'events/<int:pk>/delete/'
+            window.location.href = `/events/${markerIngredients.id}/delete/`
+          }
+        }
+      })
     })
     const mapEl = document.getElementById("map");
     if( mapEl.classList.contains('logged-in')) {

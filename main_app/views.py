@@ -47,7 +47,7 @@ class EventCreate(CreateView):
 class EventUpdate(UpdateView):
   model = Event
   # Let's disallow the renaming of a cat by excluding the name field!
-  fields = ['name', 'location', 'event_time', 'time_created', 'details']
+  fields = ['name', 'location', 'event_time', 'time_created', 'details',]
 
   #   '__all__'
   def form_valid(self, form):
