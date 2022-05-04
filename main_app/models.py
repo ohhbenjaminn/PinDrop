@@ -9,6 +9,8 @@ from datetime import date
 class Event(models.Model):
     name = models.CharField(max_length=101)
     location = models.CharField(max_length=300)
+    lat = models.CharField(max_length=101)
+    lng = models.CharField(max_length=101)
     event_time = models.DateTimeField()
     time_created = models.DateTimeField()
     details = models.CharField(max_length=1000)
