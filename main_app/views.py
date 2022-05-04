@@ -9,7 +9,8 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 
 # Define the home view
 def home(request):
-    return render(request, 'home.html')
+    events = Event.objects.all()
+    return render(request, 'events/index.html', { 'events': events })
 
 def about(request):
     return render(request, 'about.html')
