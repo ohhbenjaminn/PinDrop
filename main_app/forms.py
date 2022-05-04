@@ -6,4 +6,4 @@ from .models import Event
 class EventForm(ModelForm):
     class Meta:
         model = Event
-        fields = ['user']
+        fields = ['user', 'lat', 'lng']
