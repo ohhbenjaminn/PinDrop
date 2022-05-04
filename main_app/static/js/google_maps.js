@@ -57,7 +57,7 @@ function initMap(marks) {
         position: event.latLng, 
         map: map
       });
-      // get createview....
+      // get createview.....
       let locData = {lat: event.latLng.lat(), lng: event.latLng.lng()}
       window.location.href = `/events/create/?lat=${locData.lat}&lng=${locData.lng}`
 
