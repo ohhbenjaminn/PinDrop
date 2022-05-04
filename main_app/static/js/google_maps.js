@@ -52,16 +52,20 @@ function initMap(marks) {
         map: map,
       });
     })
-    map.addListener("click", (event) => {
-      const marker = new google.maps.Marker({
-        position: event.latLng, 
-        map: map
-      });
-      // get createview.....
-      let locData = {lat: event.latLng.lat(), lng: event.latLng.lng()}
-      window.location.href = `/events/create/?lat=${locData.lat}&lng=${locData.lng}`
+    const mapEl = document.getElementById("map");
+    if( mapEl.classList.contains('logged-in')) {
+      map.addListener("click", (event) => {
+        const marker = new google.maps.Marker({
+          position: event.latLng, 
+          map: map
+        });
+        // get createview.....
+        let locData = {lat: event.latLng.lat(), lng: event.latLng.lng()}
+        window.location.href = `/events/create/?lat=${locData.lat}&lng=${locData.lng}`
+  
+      })
+    }
 
-    })
   }
 
   
