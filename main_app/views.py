@@ -1,8 +1,9 @@
 from django.shortcuts import render
+from django.core import serializers
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Event
 # Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 # Define the home view
 def home(request):
@@ -28,6 +29,8 @@ class EventCreate(CreateView):
     def form_valid(self, form):
         event = form.save(commit=False)
         event.user = self.request.user
+        # event.lat = self.request.lat
+        # event.lng = self.request.lng
         #article.save()  # This is redundant, see comments.
         return super(EventCreate, self).form_valid(form)
 
@@ -45,3 +48,11 @@ class EventUpdate(UpdateView):
 class EventDelete(DeleteView):
   model = Event
   success_url = '/events/'
+
+def event_to_JSON(event):
+    dict = {}
+    dict[""]
+
+def get_JSON(request):
+    events_JSON = Event.objects.all().values('id', 'user', 'name', 'location', 'event_time', 'time_created', 'details', 'lat', 'lng')
+    return HttpResponse(events_JSON)
