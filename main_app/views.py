@@ -29,8 +29,6 @@ class EventCreate(CreateView):
     def form_valid(self, form):
         event = form.save(commit=False)
         event.user = self.request.user
-        # event.lat = self.request.lat
-        # event.lng = self.request.lng
         #article.save()  # This is redundant, see comments.
         return super(EventCreate, self).form_valid(form)
 
@@ -54,5 +52,5 @@ def event_to_JSON(event):
     dict[""]
 
 def get_JSON(request):
-    events_JSON = Event.objects.all().values('id', 'user', 'name', 'location', 'event_time', 'time_created', 'details', 'lat', 'lng')
+    events_JSON = Event.objects.all().values('id', 'user', 'name', 'location', 'event_time', 'time_created', 'details')
     return HttpResponse(events_JSON)

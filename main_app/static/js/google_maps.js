@@ -12,8 +12,8 @@
 //    });
 // }
 
-lngEl = $('#id_lng')
-latEl = $('.#id_lat')
+// lngEl = $('#id_lng')
+// latEl = $('.#id_lat')
 
 function initMap(marks) {
     let markDict = marks.split('}{')
