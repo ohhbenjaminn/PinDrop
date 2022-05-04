@@ -4,8 +4,9 @@ body {
     flex-direction: column;
   }
   
-  main {
-    flex: 1 0 auto;
+main {
+    /* flex: 1 0 auto; */
+    width: 100vh;
   }
   
   footer.page-footer {
@@ -13,3 +14,9 @@ body {
     text-align: right;
   }
 
+#map {
+    height: 100vh;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
