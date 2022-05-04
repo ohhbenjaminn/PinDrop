@@ -64,7 +64,6 @@ function initMap(marks) {
     })
   }
 
-
   
   function getMarkers() {
     $.ajax({
