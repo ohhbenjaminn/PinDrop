@@ -28,6 +28,7 @@ function formatMarkers(marks) {
       key = key.replace('\'','')
       let value = item.split(': ')[1].replace('\'', '')
       value = value.replace('\'','')
+      value = value.replace('datetime.datetime(','')
       obj_part[key] = value
     }
     list_marks.push(obj_part)
@@ -35,6 +36,9 @@ function formatMarkers(marks) {
   return list_marks
 }
 
+function formatInfoWindowContent(markerIngredients) {
+
+}
 
 function initMap(marks) {
     let markerList = formatMarkers(marks)
@@ -61,11 +65,28 @@ function initMap(marks) {
       // time create: 'datetime.datetime(2020, 5, 3, 0, 0....
       // lat: "-17.077762075345877"
       // lng: "128.7755974946022"
+
+      //test infowindow....
+      const infoWindow = new google.maps.InfoWindow({
+        content : `
+        <h3> ${ markerIngredients.name }  </h3>
+        <p>location: ${ markerIngredients.location }</p>
+        <p>event date: ${ markerIngredients.event_date }</p>
+        <p>event time: ${ markerIngredients.event_time }</p>
+        <p>details: ${ markerIngredients.details }</p>
+        <a href="/events/${markerIngredients.id}/">Edit</a>`
+      })
+
+
       marker.addListener('mouseup', (event) => {
         //add onclick behavior to marker 
         if (event.domEvent.which === 1) {
-          // Update endpoint: events/<int:event_id>/
-          window.location.href = `/events/${markerIngredients.id}/`
+          // open infowindow test....
+          infoWindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+          });
         }
         if( mapEl.classList.contains('logged-in')) {
           if (event.domEvent.which === 3) {

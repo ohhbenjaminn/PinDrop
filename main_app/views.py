@@ -65,7 +65,7 @@ def event_to_JSON(event):
     dict[""]
 
 def get_JSON(request):
-    events_JSON = Event.objects.all().values('id', 'user', 'name', 'location', 'event_time', 'time_created', 'details', 'lat', 'lng')
+    events_JSON = Event.objects.all().values('id', 'user', 'name', 'location', 'event_time', 'event_date', 'details', 'lat', 'lng')
     return HttpResponse(events_JSON)
 
 def create_JSON(request):
