@@ -1,3 +1,4 @@
+from django.forms import DateTimeField, DateTimeInput
 from django.shortcuts import render
 from django.core import serializers
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -27,12 +28,17 @@ class EventCreate(CreateView):
 #   '__all__'
     success_url = '/events/'
 
+    class Meta:
+        widgets = {
+            'event_time' : DateTimeInput()
+        }
+
     def form_valid(self, form):
         event = form.save(commit=False)
 
         event.user = self.request.user
-        event.lat = self.request.GET.get('lat','')
-        event.lng = self.request.GET.get('lng','')
+        event.lat = self.request.GET.get('lat', '')
+        event.lng = self.request.GET.get('lng', '')
         # event.lng = json_stuff.lng
         #article.save()  # This is redundant, see comments.
         return super(EventCreate, self).form_valid(form)

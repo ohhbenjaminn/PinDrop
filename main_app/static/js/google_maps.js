@@ -38,14 +38,13 @@ function formatMarkers(marks) {
 
 function initMap(marks) {
     let markerList = formatMarkers(marks)
-    console.log(markerList)
-    const uluru = { lat: -25.344, lng: 131.031 };
-    // The map, centered at Uluru
+    const veniceBeach = { lat: 34.003052, lng: -118.483971 };
+    // The map, center it on Venice Beach for now, later this will be user's home
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 4,
-      center: uluru,
+      center: veniceBeach,
     });
-    // The marker, positioned at Uluru
+    // make markers
     markerList.forEach(function (markerIngredients) {
       console.log(markerIngredients)
       const marker = new google.maps.Marker({
@@ -62,22 +61,8 @@ function initMap(marks) {
       let locData = {lat: event.latLng.lat(), lng: event.latLng.lng()}
       window.location.href = `/events/create/?lat=${locData.lat}&lng=${locData.lng}`
 
-      // fetch('/events/create/', {
-      //   method: 'POST',
-      //   redirect: 'follow',
-      //   mode: 'same-origin',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //     'X-CSRFToken': csrftoken,
-      //   },
-      //   body: JSON.stringify(locData),
-      // })
-      // .then(response => {
-      //   window.location.href = response.url
-      // })
     })
   }
-
 
   
   function getMarkers() {
@@ -87,7 +72,6 @@ function initMap(marks) {
       success: function(data) {
         let x = JSON.stringify(data);
         x = JSON.parse(x);
-        // console.log(x)
         initMap(x)
       },
       error: function(error) {
