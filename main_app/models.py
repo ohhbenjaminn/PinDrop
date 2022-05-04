@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import date
-
+from datetime import time
 # Create your models here
 # class User(models.Model):
 #     name = models.CharField(max_length=100)
@@ -12,11 +12,14 @@ class Event(models.Model):
     location = models.CharField(max_length=300)
     lat = models.CharField(max_length=101)
     lng = models.CharField(max_length=101)
-    event_time = models.DateTimeField()
-    time_created = models.DateTimeField()
+    event_time = models.TimeField(null=True)
+    event_date = models.DateField(null=True)
+    time_created = models.TimeField(null=True)
+    date_created = models.DateField(null=True)
     details = models.CharField(max_length=1000)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    
+    fields = ['event_date', 'event_time']
+
     def __str__(self):
         return f"The event named {self.name} has id of {self.id}"
     

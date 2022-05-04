@@ -24,7 +24,7 @@ def events_detail(request, event_id):
 
 class EventCreate(CreateView):
     model = Event
-    fields = ['name', 'location', 'event_time', 'time_created', 'details',]
+    fields = ['name', 'location', 'event_time', 'event_date', 'details',]
 #   '__all__'
     success_url = '/events/'
 

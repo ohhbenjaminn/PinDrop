@@ -11,4 +11,21 @@
     </table>
     <input type="submit" value="Submit!" class="btn">
   </form>
+
+  <script>
+    const dateEl = document.getElementById('id_event_time');
+    M.Timepicker.init(dateEl, {
+      format: 'yyyy-mm-dd',
+      defaultDate: new Date(),
+      setDefaultDate: true,
+      autoClose: true
+    });
+    const eventDate = document.getElementById('id_event_date');
+    M.Datepicker.init(eventDate, {
+      format: 'yyyy-mm-dd',
+      defaultDate: new Date(),
+      setDefaultDate: true,
+      autoClose: true
+    });
+  </script>
 {% endblock %}
