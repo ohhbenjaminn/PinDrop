@@ -18,7 +18,8 @@ class Event(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.name
+        return f"The event named {self.name} has id of {self.id}"
+    
 
   # Add this method
     def get_absolute_url(self):
