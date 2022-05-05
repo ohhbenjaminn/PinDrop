@@ -118,7 +118,18 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+GOOGLE_API_KEY = "AIzaSyCPySsJ7d0AT0LfPb9B4cZ6aJ4xZKbOJQY"
+
+LOGIN_REDIRECT_URL = '/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# LOGIN_URL = "users:sign-in"
+# # LOGIN_REDIRECT_URL = "users:account"
+# LOGOUT_REDIRECT_URL = "users:sign-in"
+
+BASE_COUNTRY = "USA"

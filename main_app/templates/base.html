@@ -7,9 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pin Drop</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script type="module" src="{% static 'js/google_maps.js' %}"></script>
 </head>
 <body>
   <header class="navbar-fixed">
@@ -19,18 +22,35 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Pin Drop</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/events">View All Events</a></li>
+            <li><a href="/about">About</a></li>
+            <!-- <li><a href="{% url 'events_create' %}">Add an Event</a></li> -->
+
+            <li><a href="{% url 'index' %}">View All Events</a></li>
+    
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}?next=/events"> Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}?next=/events">Log In</a></li>
+            {% endif %}
+
         </ul>
       </div>
     </nav>
   </header>
+
   <main class="container">
+
     {% block content %}
     {% endblock %}
+
   </main>
+
   <footer class="page-footer">
     <div class="right">All Rights Reserved, &copy; 2022 Pin Drop &nbsp;</div>
   </footer>
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPySsJ7d0AT0LfPb9B4cZ6aJ4xZKbOJQY&callback=initMap&v=weekly"
+  defer></script>
 </body>
 </html>
