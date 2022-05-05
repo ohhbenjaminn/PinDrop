@@ -1,5 +1,6 @@
 body {
-    background-color: #e2e2e2;
+    background-color: #fbfafa;
+
 }
 h1 {
     text-align: center;
@@ -33,7 +34,7 @@ h2 {
 }
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
-.row{
+.row {
     font-size: 30px;
     text-indent: 50px;
     padding-top: 50px;
@@ -42,6 +43,7 @@ h2 {
     padding-left: 80px;
     text-align: center;
 }
+
 .column {
     float: left;
     width: 33.33%;
@@ -70,7 +72,7 @@ h2 {
     background-color: #e2e2e2;
 }
 
-.section-middle{
+.section-middle {
     background-color: #e2e2e2;
 }
 .section-bottom {
@@ -81,20 +83,20 @@ h2 {
 
 /* ------Header and footer------ */
 
-.nav-wrapper{
+.nav-wrapper {
     background-color:rgb(51, 51, 51);
 }
-.right{
+.right {
   font-weight: lighter;
 }
 
-.left.brand-logo{
+.left.brand-logo {
     background-color: rgb(51, 51, 51);
     color: rgb(255, 153, 0);
 }
 .right {
     padding-bottom: 10px;
-    color: black
+    color: black;
 }
 
 .page-footer {
