@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django import forms
 from .models import Event
+
 from .widgets import DateTimePickerInput, DatePickerInput, TimePickerInput
 
 class DateInput(forms.DateInput):
@@ -18,5 +19,3 @@ class EventForm(ModelForm):
         #     'event_time_field' : TimePickerInput(),
         #     'event_date_field'  : DatePickerInput(),
         # }
-
-        

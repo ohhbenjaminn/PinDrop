@@ -36,10 +36,7 @@ class EventCreate(LoginRequiredMixin, CreateView):
 #   '__all__'
     success_url = '/events/'
 
-    class Meta:
-        widgets = {
-            'event_time' : DateTimeInput()
-        }
+   
 
     def form_valid(self, form):
         event = form.save(commit=False)

@@ -1,18 +1,36 @@
+
+.left.brand-logo{
+background-color: rgb(51, 51, 51);
+color: rgb(255, 153, 0);
+}
+.right {
+background-color: rgb(51, 51, 51);
+}
 body {
+    background-color: rgb(8, 59, 53);
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
-  
+ .page-footer{
+   background-color: rgb(250, 235, 215);
+ }
+  .nav-wrapper{
+    background-color:rgb(51, 51, 51);
+  }
 main {
     /* flex: 1 0 auto; */
     width: 100vh;
   }
-  
+   
   footer.page-footer {
     padding-top: 0;
     text-align: right;
+    background-color:rgb(51, 51, 51);
   }
+.right{
+  font-weight: lighter;
+}
 
 #map {
     height: 100vh;
@@ -20,3 +38,26 @@ main {
     width: 100%;
     /* The width is the width of the web page */
   }
+.card{
+  color: rgb(255, 153, 0);
+  font-weight:lighter;
+  background-color: rgb(51, 51, 51);
+}
+.aboutp{
+font-size:x-large;
+font-weight: lighter;
+color: aliceblue;
+}
+#map{
+  border: 0ch;
+  width: 100vw;
+  height: 100vh;
+}
+.container{
+  display: flex;
+    margin: auto;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+
+}
