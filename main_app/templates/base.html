@@ -25,10 +25,6 @@
         </ul>
         <ul class="right">
             <li><a href="/about">About</a></li>
-            <!-- <li><a href="{% url 'events_create' %}">Add an Event</a></li> -->
-            <!-- view all link, maybe not needed with brand logo above -->
-            <!-- <li><a href="{% url 'index' %}">View All Events</a></li> -->
-    
             {% if user.is_authenticated %}
             <li><a href="{% url 'logout' %}?next=/events"> Logout</a></li>
             {% else %}
