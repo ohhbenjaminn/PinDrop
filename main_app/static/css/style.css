@@ -25,7 +25,6 @@ body {
     font-size: 140px;
     font-weight: bold;
     text-shadow: 3px 13px black;
-    /* border: 7px solid #ffe083; */
     text-align: center;
   }
  .page-footer{
@@ -35,7 +34,6 @@ body {
     background-color:rgb(51, 51, 51);
   }
 main {
-    /* flex: 1 0 auto; */
     width: 100vh;
   }
    
@@ -91,8 +89,6 @@ font-size: 3vh;
   height: 100vh;
 }
 
-
-/* ---------------- Sign up css ------------------- */
 .signupform {
   color: white;
 }
@@ -108,18 +104,14 @@ font-size: 3vh;
   padding: 0;
   flex-direction: column;
   align-items: center;
-  /* background-color: white; */
   width: 100%;
   padding-bottom: 100%;
   position: relative;
-  /* background-color: #2980b9; */
   background-image: url("https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  /* https://media.istockphoto.com/vectors/seamless-pattern-with-navigation-icons-vector-id1223483183 */
   background-repeat: no-repeat;
   height: 100vh;
 }
 form.signupform{
-  /* background-color: white; */
   border: 12px solid black;
   padding: 20px 40px 60px 30px;
   background-color: white;
@@ -131,11 +123,9 @@ form.signupform{
   font-size: 25px;
   border-radius: 25px;
   border: 7px solid black;
-  /* border: 7px solid #ffe083; */
 }
-/* ---------------- End of sign up css ------------------- */
+
 form.login-square {
-  /* border: 12px solid #baafa8; */
   padding: 10px 70px 100px 90px;
   background-color: white;
   color:black;
@@ -146,38 +136,31 @@ form.login-square {
   font-size: 55px;
   border-radius: 25px;
   border: 7px solid black;
-  /* border: 7px solid #ffe083; */
 }
 label.active {
   color: black
 }
 
-/* --------event form------------------ */
 form.event-form-square{
   padding: 0px 10px 10px 20px;
   background-color: white;
   color:black;
   margin-top: 60px;
   margin-right: 80px;
-  /* margin-bottom: 30px; */
   margin-left: 60px;
   font-size: 20px;
   border-radius: 25px;
-  /* border: 7px solid black; */
   border: 7px solid #ffe083;
   height: 60vh;
 }
 
-/* --------------delete form----------------------- */
 h4 {
   color: white;
   font-size: 60px;
   text-align: center;
 }
-
 #deletebtn {
   font-size: 40px;
-  /* font-weight: bold; */
   padding: 20px 10px 50px 20px;
   text-align: center;
   border-radius: 25px;
@@ -188,7 +171,6 @@ h4 {
   font-weight: bold;
   font-size: 30px;
   padding-left: 30px;
-  /* padding-top: 10px; */
 }
 .teal-text {
   color: red;

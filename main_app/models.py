@@ -3,9 +3,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import date
 from datetime import time
-# Create your models here
-# class User(models.Model):
-#     name = models.CharField(max_length=100)
 
 EVENT_TYPE_CHOICES = (
     ('Meet Up', 'meet up'),
