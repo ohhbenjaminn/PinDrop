@@ -42,26 +42,23 @@ class EventCreate(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         event = form.save(commit=False)
-
         event.user = self.request.user
         event.lat = self.request.GET.get('lat', '')
         event.lng = self.request.GET.get('lng', '')
-        # event.lng = json_stuff.lng
-        #article.save()  # This is redundant, see comments.
         return super(EventCreate, self).form_valid(form)
     
 
 class EventUpdate(UpdateView):
   model = Event
-#   fields = ['name', 'location', 'event_time', 'event_date', 'details', 'event_type']
-
-  form_class = EventForm
+  fields = ['name', 'location', 'event_time', 'event_date', 'details', 'event_type']
+  success_url = '/events/'
+#   form_class = EventForm
 
   #   '__all__'
-  def form_valid(self, form):
-        event = form.save(commit=False)
-        event.user = self.request.user 
-        return super(EventCreate, self).form_valid(form)
+#   def form_valid(self, form):
+#         event = form.save(commit=False)
+#         event.user = self.request.user 
+#         return super(EventCreate, self).form_valid(form)
 
 class EventDelete(LoginRequiredMixin, DeleteView):
   model = Event
