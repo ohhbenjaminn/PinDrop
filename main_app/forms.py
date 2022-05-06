@@ -16,3 +16,9 @@ class EventForm(ModelForm):
         event_time = forms.DateTimeField(widget=DateTimePickerInput)
         event_date = forms.DateTimeField(widget=DateTimePickerInput)
         event_type = forms.ChoiceField()
+
+        widgets = {
+            'event_time_field' : TimePickerInput(),
+            'event_date_field'  : DatePickerInput(),
+        }
+
