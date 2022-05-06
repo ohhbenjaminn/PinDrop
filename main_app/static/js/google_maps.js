@@ -111,18 +111,17 @@ function initMap(marks) {
           }
         })
         let touchStart;
-        marker.addListener('touchstart', (event) => {
-          touchStart = Date.now();
-        })
-
-        marker.addListener('touchend', (event) => {
-          let touchEnd = Date.now();
-          if( mapEl.classList.contains('logged-in')) {
-            if (touchEnd - touchStart > 500) {
+        marker.addListener('touchstart', function(event) {
+          touchStart = setTimeout(function() {
+            if( mapEl.classList.contains('logged-in')) {
               window.location.href = `/events/${markerIngredients.id}/delete/`
             }
-          }
+          }, 500);
         })
+
+        marker.addListener('touchend', function(event) {
+          clearTimeout(touchStart);
+        });
 
         marker.addListener('mouseup', (event) => {
           if( mapEl.classList.contains('logged-in')) {
